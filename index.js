@@ -49,11 +49,11 @@ var radixSort = module.exports = function radixSort (array, d, ascending) {
     // and which one is being populated using the `toResult` flag
     var toResult = true;
     for (i = 1; i <= d; i++) {
+        // 1 is least significant digit (ones)
+        // 2 is next significant digit (tens), etc..
         for (j = 0; j < 10; j++) {
             workingCopy[j] = 0;
         }
-        // 0 is least significant digit (ones)
-        // 1 is next significant digit (tens), etc..
         for (j = 0; j < array.length; j++) {
             var value = toResult ? array[j] : result[j];
             digits = value.toString();
